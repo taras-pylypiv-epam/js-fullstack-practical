@@ -1,11 +1,21 @@
 import express from 'express';
+import cors from 'cors';
 import quizRoutes from '@/routes/quizRoutes.js';
 
 const app = express();
-const port = '3000';
+const PORT = process.env.PORT || 3000;
 
+app.use(
+    cors({
+        origin: process.env.FRONTEND_URL || 'http://localhost:3001',
+        methods: ['GET', 'POST', 'DELETE'],
+        allowedHeaders: ['Content-Type'],
+    })
+);
+
+app.use(express.json());
 app.use('/quizzes', quizRoutes);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`);
 });
