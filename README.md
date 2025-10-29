@@ -1,39 +1,48 @@
-# Quiz App
+# Quiz Builder
 
-A simple Quiz App built with **TypeScript**, **Express.js**, **Prisma ORM**, and **Zod** for request validation.
+Quiz Builder web application where users can create custom quizzes with various types of questions.
+
+Stack:
+- TypeScript
+- Express.js
+- Prisma ORM
+- Zod
+- Next.js
 
 ---
 
-## Installation (backend)
-
-1. Clone the repository:
+## Clone repository
 
 ```bash
 git clone <repository-url>
 cd <repository-folder>
 ```
 
-2. Install dependencies:
+---
+
+## Installation (backend)
+
+1. Install dependencies:
 
 ```bash
 cd backend
 npm install
 ```
 
-3. Configure your database in `.env`:
+2. Configure your database in `.env`:
 
 ```env
 DATABASE_URL="file:./dev.db"
 ```
 
-4. Generate Prisma client and run migrations:
+3. Generate Prisma client and run migrations:
 
 ```bash
 npx prisma generate
 npx prisma migrate dev --name init
 ```
 
-5. (Optional) Seed initial data:
+4. (Optional) Seed initial data:
 
 ```bash
 npx prisma db seed
@@ -54,6 +63,40 @@ npx prisma db seed
 | `npm run format`       | Format code using Prettier                    |
 | `npm run format:check` | Check code formatting without writing changes |
 | `npm run prepare`      | Run Husky hooks (git hooks setup)             |
+
+---
+
+## Installation (frontend)
+
+1. Install dependencies:
+
+```bash
+cd frontend
+npm install
+```
+
+2. Configure API URL `.env.local`:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000
+```
+
+3. Start dev server:
+
+```bash
+npm run dev
+```
+
+---
+
+## Scripts (frontend)
+
+| Command                | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `npm run dev`          | Start the Next.js development server              |
+| `npm run build`        | Build the production-ready frontend               |
+| `npm start`            | Start the production build                        |
+| `npm run lint`         | Check code with ESLint                            |
 
 ---
 
@@ -79,7 +122,7 @@ npx prisma db seed
     { "text": "Your favorite programming language?", "type": "INPUT" },
     {
       "text": "Pick all fruits",
-      "type": "CHECKBOX",
+      "type": "MULTIPLE",
       "options": [
         { "text": "Apple" },
         { "text": "Banana" },

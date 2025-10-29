@@ -51,7 +51,7 @@ export default function QuizzesPage() {
                 href="/quizzes/new"
                 className="inline-block mb-4 text-blue-600 hover:underline"
             >
-                + Create New Quiz
+                Create New Quiz
             </Link>
 
             {quizzes.length === 0 ? (
