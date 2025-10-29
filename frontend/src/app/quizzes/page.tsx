@@ -48,7 +48,7 @@ export default function QuizzesPage() {
             <h1 className="text-2xl font-bold mb-4">All Quizzes</h1>
 
             <Link
-                href="/quizzes/new"
+                href="/quizzes/create"
                 className="inline-block mb-4 text-blue-600 hover:underline"
             >
                 Create New Quiz
