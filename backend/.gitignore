@@ -14,3 +14,7 @@
 
 # Test coverage
 /coverage
+
+# Prisma (ORM)
+/generated/prisma
+*.db
